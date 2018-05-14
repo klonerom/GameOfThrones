@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <h1>Show one person</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>Firstname</th>
+                        <th>Gender</th>
+                        <th>Biography</th>
+                        <th>Kingdom</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ persons.id }}</td>
+                        <td>{{ persons.name }}</td>
+                        <td>{{ persons.firstname }}</td>
+                        <td>{{ persons.gender }}</td>
+                        <td>{{ persons.biography }}</td>
+                        <td>{{ persons.kingdom }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+{% endblock %}
+

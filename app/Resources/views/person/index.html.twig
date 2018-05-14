@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <h1><span>List of persons</span></h1>
+            </div>
+            <table>
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Firstname</th>
+                    <th>Gender</th>
+                    <th>Biography</th>
+                    <th>Kingdom</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for person in persons %}
+                <tr>
+                    <td>{{ person.id }}</td>
+                    <td>{{ person.name }}</td>
+                    <td>{{ person.firstname }}</td>
+                    <td>{% if person.gender == 1 %}
+                            M
+                        {% elseif person.gender == 0 %}
+                            Mme
+                        {% else %}
+                            {{ person.gender }}
+                        {% endif %}</td>
+                    <td>{{ person.biography }}</td>
+                    <td>{{ person.kingdom }}</td>
+                </tr>
+                {%  endfor %}
+                </tbody>
+            </table>
+            <div>
+                <a href="{{ path('person_add') }}">Create a new person</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

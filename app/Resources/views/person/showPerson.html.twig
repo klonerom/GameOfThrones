@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <h1>Show one person</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>Firstname</th>
+                        <th>Gender</th>
+                        <th>Biography</th>
+                        <th>Kingdom</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ person.id }}</td>
+                        <td>{{ person.name }}</td>
+                        <td>{{ person.firstname }}</td>
+                        <td>{{ person.gender }}</td>
+                        <td>{{ person.biography }}</td>
+                        <td>{{ person.kingdom }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a href="{{ path('person_index') }}">Back to the list</a>
+        </div>
+    </div>
+{% endblock %}
+
